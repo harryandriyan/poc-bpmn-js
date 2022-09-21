@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0iwi5bh" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="9.3.2">
+  <bpmn:process id="Process_08whygw" isExecutable="false">
+    <bpmn:task id="Activity_1vukrmd" name="Launch basic Auth Flow">
+      <bpmn:outgoing>Flow_1iniidy</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1iniidy" sourceRef="Activity_1vukrmd" targetRef="Gateway_1c711ga" />
+    <bpmn:inclusiveGateway id="Gateway_1c711ga">
+      <bpmn:incoming>Flow_1iniidy</bpmn:incoming>
+      <bpmn:outgoing>Flow_10ce7yc</bpmn:outgoing>
+    </bpmn:inclusiveGateway>
+    <bpmn:task id="Activity_101197n" name="Finish as basic flow did">
+      <bpmn:incoming>Flow_10ce7yc</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_10ce7yc" sourceRef="Gateway_1c711ga" targetRef="Activity_101197n" />
+    <bpmn:textAnnotation id="TextAnnotation_1tf0ha5">
+      <bpmn:text>obj = Trigger io.jans.auth.Basic</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_14h4qwh" sourceRef="Activity_1vukrmd" targetRef="TextAnnotation_1tf0ha5" />
+    <bpmn:textAnnotation id="TextAnnotation_00wt19v">
+      <bpmn:text>obj.success is false</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1ehk78c" sourceRef="Gateway_1c711ga" targetRef="TextAnnotation_00wt19v" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_08whygw">
+      <bpmndi:BPMNShape id="TextAnnotation_1tf0ha5_di" bpmnElement="TextAnnotation_1tf0ha5">
+        <dc:Bounds x="220" y="120" width="200" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_00wt19v_di" bpmnElement="TextAnnotation_00wt19v">
+        <dc:Bounds x="440" y="114" width="130" height="26" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1iniidy_di" bpmnElement="Flow_1iniidy">
+        <di:waypoint x="270" y="240" />
+        <di:waypoint x="375" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10ce7yc_di" bpmnElement="Flow_10ce7yc">
+        <di:waypoint x="400" y="265" />
+        <di:waypoint x="400" y="380" />
+        <di:waypoint x="490" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Gateway_193vffl_di" bpmnElement="Gateway_1c711ga">
+        <dc:Bounds x="375" y="215" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1vukrmd_di" bpmnElement="Activity_1vukrmd">
+        <dc:Bounds x="170" y="200" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_101197n_di" bpmnElement="Activity_101197n">
+        <dc:Bounds x="490" y="340" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_14h4qwh_di" bpmnElement="Association_14h4qwh">
+        <di:waypoint x="263" y="201" />
+        <di:waypoint x="320" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1ehk78c_di" bpmnElement="Association_1ehk78c">
+        <di:waypoint x="413" y="228" />
+        <di:waypoint x="508" y="140" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -30,6 +30,7 @@
     "downloadjs": "^1.4.7",
     "min-dash": "^4.0.0",
     "react": "^16.8.3",
+    "react-ace": "^10.1.0",
     "react-dom": "^16.8.3"
   }
 }
