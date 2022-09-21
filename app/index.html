@@ -22,21 +22,22 @@
     .modeler-parent {
       flex: 1;
       display: flex;
-      flex-direction: column;
     }
 
     #modeler-container {
       flex: 1;
     }
 
-    #properties-container {
-      overflow-y: auto;
-
-      border-top: solid 2px #CCC;
+    #side-panel {
       background: #FAFAFA;
+      width: 300px;
+      height: 100vh;
+      padding: 20px;
+      overflow-y: auto;
+    }
 
-      padding: 5px;
-      height: 200px;
+    .bjs-powered-by {
+      display: none;
     }
 
   </style>
@@ -44,7 +45,7 @@
 <body>
   <div class="modeler-parent">
     <div id="modeler-container"></div>
-    <div id="properties-container"></div>
+    <div id="side-panel"></div>
   </div>
 
   <script type="text/javascript" src="app.js"></script>

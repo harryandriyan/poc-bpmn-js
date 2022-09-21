@@ -1,10 +1,11 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Modeler from 'bpmn-js/lib/Modeler';
-import PropertiesPanel from './properties-panel';
 import customModdleExtension from './moddle/custom.json';
 import diagramXML from './diagram.bpmn';
+import DSLCode from './components/dsl'
 
 const $modelerContainer = document.querySelector('#modeler-container');
-const $propertiesContainer = document.querySelector('#properties-container');
 
 const modeler = new Modeler({
   container: $modelerContainer,
@@ -16,9 +17,18 @@ const modeler = new Modeler({
   }
 });
 
-const propertiesPanel = new PropertiesPanel({
-  container: $propertiesContainer,
-  modeler
+modeler.on('create.init', (event) => {
+  console.log('create.init', event)
+});
+
+modeler.on('shape.added', (event) => {
+  console.log('shape.added', event)
 });
 
 modeler.importXML(diagramXML);
+
+const sidePanel = document.getElementById('side-panel');
+ReactDOM.render(
+  <DSLCode />,
+  sidePanel
+);
